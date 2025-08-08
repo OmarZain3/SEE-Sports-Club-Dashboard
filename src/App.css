@@ -1,0 +1,1653 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* App layout */
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #1a1a1a;
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #6200ea;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.club-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.info-logo {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.2;
+}
+
+.collapse-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.collapse-btn:hover {
+  color: #fff;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.nav-section {
+  margin-bottom: 32px;
+}
+
+.nav-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.nav-item:hover {
+  background-color: #2a2a2a;
+}
+
+.nav-item.active {
+  background-color: #7501ff;
+}
+
+.nav-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.nav-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.nav-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.nav-subtitle {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.2;
+}
+
+.nav-item.active .nav-subtitle {
+  color: #fff;
+}
+
+.notification-badge {
+  background-color: #5220c4;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.user-profile-card {
+  background-color: #131313 !important;
+  width: 100% !important;
+  border-radius: 10px !important;
+  padding: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.user-avatar {
+  width: 30px !important;
+  height: 30px !important;
+  background-color: #7501ff !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #fff !important;
+  flex-shrink: 0 !important;
+}
+
+.user-info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 2px !important;
+}
+
+.user-name {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  margin: 0 !important;
+}
+
+.user-email {
+  font-size: 12px !important;
+  color: #666 !important;
+  margin: 0 !important;
+}
+
+
+.logout-section {
+  margin-top: 10px;
+  padding: 0 16px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.logout-btn:hover {
+  color: #fff;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+}
+
+/* Performance Analytics */
+.performance-analytics {
+  margin-bottom: 32px;
+}
+
+/* .performance-analytics-section {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #333;
+} */
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.analytics-title-section {
+  flex: 1;
+}
+
+.analytics-subtitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.analytics-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.analytics-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.analytics-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.physical-assessment-section {
+  margin-bottom: 24px;
+}
+
+.assessment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.assessment-title-section {
+  flex: 1;
+}
+
+.assessment-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #6728f5;
+  margin-bottom: 8px;
+}
+
+.assessment-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.selected-metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.selected-metric svg {
+  color: #00ff88;
+}
+
+.assessment-metrics {
+  display: flex;
+  gap: 0;
+  margin-bottom: 24px;
+  width: 100%;
+  background-color: #1b1b1b;
+  border-radius: 10px;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+.assessment-metric-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #666;
+  padding: 12px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.assessment-metric-btn:hover {
+  color: #fff;
+}
+
+.assessment-metric-btn.active {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+/* Performance Chart */
+.performance-chart {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  border: 1px solid #333;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+
+.chart-title-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chart-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #283630;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7bffba;
+  flex-shrink: 0;
+}
+
+.chart-title-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chart-title-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.chart-subtitle {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.2;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 24px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-color.ahmed {
+  background-color: #79f6b8;
+}
+
+.legend-color.team {
+  background-color: #8b5cf6;
+}
+
+.legend-color.league {
+  background-color: #666;
+}
+
+.legend-color.ball-control {
+  background-color: #00ff88;
+}
+
+.legend-color.passing {
+  background-color: #8b5cf6;
+}
+
+.legend-color.shooting {
+  background-color: #666;
+}
+
+/* Skill Analytics Styles */
+.skill-analytics {
+  margin-bottom: 32px;
+}
+
+.skill-analytics-section {
+  border-radius: 12px;
+  padding: 0px;
+  margin-bottom: 24px;
+  padding-top: 10px;
+}
+
+.skill-assessment-section {
+  margin-bottom: 24px;
+}
+
+.skill-chart {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  border: 1px solid #333;
+}
+
+.metrics-summary {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.metric-card {
+  background-color: #181818;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.metric-card:nth-child(1) .metric-value {
+  color: #00ff88;
+}
+
+.metric-card:nth-child(2) .metric-value {
+  color: #8b5cf6;
+}
+
+.metric-card:nth-child(3) .metric-value {
+  color: #666;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #333;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress-fill.your-average {
+  background-color: #00ff88;
+}
+
+.progress-fill.team-average {
+  background-color: #8b5cf6;
+}
+
+.progress-fill.league-average {
+  background-color: #666;
+}
+
+.chart-container {
+  height: 300px;
+}
+
+/* Video Analysis */
+.video-analysis {
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.video-header {
+  margin-bottom: 32px;
+}
+
+.video-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.video-subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.video-section {
+  margin-bottom: 32px;
+}
+
+.section-title-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.section-title-dash {
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 13px;
+}
+
+.section-title-dash.physical-dash {
+  background-color: #7cfcbc;
+}
+
+.section-title-dash.skills-dash {
+  background-color: #7501ff;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.video-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.video-card:hover {
+  transform: translateY(-2px);
+}
+
+.video-thumbnail {
+  position: relative;
+  height: 140px;
+  background-color: #0a0a0a;
+  border: 2px solid #333;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a0a0a;
+}
+
+.video-duration {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.video-title-container {
+  padding: 12px;
+  text-align: left;
+}
+
+.video-title-text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+
+.video-title-underline {
+  height: 3px;
+  width: 28px;
+  border-radius: 1px;
+  margin: 0;
+}
+
+.video-title-underline.physical-underline {
+  background-color: #7cfcbc;
+}
+
+.video-title-underline.skills-underline {
+  background-color: #8b5cf6;
+}
+
+/* Player Overview Styles */
+.player-overview {
+  margin-bottom: 32px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #333;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.breadcrumbs span {
+  color: #fff;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #7501ff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.share-btn:hover {
+  background-color: #5220c4;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.player-header {
+  margin-bottom: 24px;
+}
+
+.player-name {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.player-description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.period-selector {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 16px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.period-label {
+  font-weight: 600;
+  color: #fff;
+}
+
+.period-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.period-btn {
+  background: none;
+  color: #666;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.period-btn:hover {
+  border-color: #7501ff;
+  color: #fff;
+}
+
+.period-btn.active {
+  background-color: #7501ff;
+  border: none;
+  color: #fff;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  color: #666;
+  font-size: 14px;
+}
+
+.custom-btn, .reset-btn {
+  background: none;
+  border: 1px solid #333;
+  color: #666;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.custom-btn:hover, .reset-btn:hover {
+  border-color: #7501ff;
+  color: #fff;
+}
+
+/* Two-Column Layout */
+.player-content-layout {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+}
+
+.player-card-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.physical-progress-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.sub-sec{
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #1b1b1b;
+  border-color: #2a2a2a;
+  border-width: 1px;
+}
+.card-content{
+  position: relative;
+  z-index: 1;
+}
+
+.card-bg{
+  width: 100%;
+  position: absolute; /* or relative, fixed, sticky */
+  z-index: 0;
+}
+
+.player-card-section {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.player-card-container {
+  width: 100%;
+  min-width: 400px; /* Match design width */
+  max-height: 357px;
+  margin: 0 auto;
+  padding: 0; /* You already have padding inside the background div */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 33px;
+}
+
+.player-card-background {
+  width: 100%;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.player-card-wrapper {
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  transition: all 0.6s ease;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  transform: scale(1);
+}
+
+.player-card-wrapper:hover {
+  transform: scale(1.05);
+}
+
+
+/* PlayerCard styles are now handled in PlayerCard.css */
+
+.player-card-footer {
+  width: 100%;
+  background-color: #111;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.player-info-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.left-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-name-card {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.team-name-card {
+  font-size: 14px;
+  color: #888;
+  margin-top: -8px;
+}
+
+.live-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.live-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #79f6b8;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.live-text {
+  color: #79f6b8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.rating {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.player-image {
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.player-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.player-details {
+  text-align: center;
+}
+
+.player-name-card {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.position {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.role {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.player-traits {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+
+.physical-progress {
+  margin-bottom: 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.physical-progress-title {
+  color: #7501ff;
+  font-weight: 700;
+}
+
+.active-dot {
+  color: #79f6b8;
+  font-size: 12px;
+  margin-left: 380px;
+  display: inline-block;
+}
+
+.test-tabs {
+  display: flex;
+  background-color: #0f0f0f;
+  padding: 3px;
+  border-radius: 10px ;
+  gap: 8px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+.test-tab {
+  background: #0f0f0f;
+  border: none;
+  color: #666;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.test-tab:hover {
+  color: #fff;
+}
+
+.test-tab.active {
+  background-color: #131313;
+  border-color: #1b1b1b;
+  color: #fff;
+}
+
+.progress-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.progress-card, .summary-card {
+  background-color: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.progress-circle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+}
+
+.progress-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dual-progress-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.progress-background {
+  stroke: #333;
+}
+
+.progress-fill {
+  stroke: #7501ff;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-fill-current {
+  stroke: #79f6b8;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-fill-last-best {
+  stroke: #7501ff;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.progress-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dual-progress-circle .progress-value {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.progress-details {
+  text-align: center;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.detail-dot {
+  color: #7501ff;
+  font-weight: bold;
+}
+
+.improvement-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #79f6b8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.summary-items {
+  margin-bottom: 16px;
+}
+
+.summary-item {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.improvement-dot {
+  color: #79f6b8;
+}
+
+.consistency-dot {
+  color: #7501ff;
+}
+
+.period-info {
+  color: #666;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 2px;
+}
+
+.skills-analysis {
+  margin-bottom: 32px;
+}
+
+.analysis-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Skills Development Analysis Styles */
+.skills-development-analysis {
+  margin-bottom: 32px;
+}
+
+.skills-content {
+  background-color: #1b1b1b;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #333;
+}
+
+.skills-header {
+  margin-bottom: 24px;
+}
+
+.skills-title-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.skills-vertical-line {
+  width: 4px;
+  height: 40px;
+  background-color: #7501ff;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.skills-title-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.skills-main-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.skills-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #79f6b8;
+}
+
+.skills-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #333;
+}
+
+.skill-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #666;
+  padding: 12px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  text-align: center;
+  font-size: 14px;
+}
+
+.skill-tab:hover {
+  color: #fff;
+}
+
+.skill-tab.active {
+  border: none;
+  color: #fff;
+}
+
+.skills-progress-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.skill-progress-card {
+  background-color: #0f0f0f;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.skill-progress-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.skill-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.skill-detail-dot.current {
+  color: #79f6b8;
+}
+
+.skill-detail-dot.last-best {
+  color: #7501ff;
+}
+
+.improvement-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #79f6b8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Physical Performance Styles */
+.physical-performance {
+  margin-bottom: 16px;
+}
+
+.physical-performance-title {
+  color: #00ff88;
+  font-weight: 700;
+}
+
+.performance-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.performance-cards {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.performance-card {
+  background-color: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 8px;
+  min-width: 238px;
+  height: 170px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.performance-card-header {
+  background-color: #1b1b1b;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.performance-card-title {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.performance-card-icon {
+  width: 28px;
+  height: 28px;
+  background-color: #30493b;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #72e6aa;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.performance-card-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  padding: 16px;
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+
+.performance-card-subtitle {
+  font-size: 12px;
+  color: #666;
+  line-height: 1;
+  padding: 0 16px 16px;
+}
+
+/* Skill Development Styles */
+.skill-development {
+  margin-bottom: 16px;
+}
+
+.skill-development-title {
+  color: #7501ff;
+  font-weight: 700;
+}
+
+.skill-development-cards {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.skill-development-card {
+  background-color: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 8px;
+  min-width: 238px;
+  height: 170px;
+}
+
+.skill-development-card-header {
+  background-color: #1b1b1b;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-development-card-title {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.skill-development-card-icon {
+  width: 28px;
+  height: 28px;
+  background-color: #2b1744;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6104e3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.skill-development-card-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  padding: 16px;
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+
+.skill-development-card-subtitle {
+  font-size: 12px;
+  color: #666;
+  line-height: 1;
+  padding: 0 16px 16px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .player-content-layout {
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .player-card-column,
+  .physical-progress-column {
+    flex: none;
+  }
+  
+  .player-card-section {
+    margin-bottom: 0;
+  }
+  
+  .physical-progress {
+    margin-bottom: 0;
+  }
+  
+  .player-card-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .period-selector {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .period-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .date-range {
+    margin-left: 0;
+  }
+  
+  .test-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .progress-cards {
+    grid-template-columns: 1fr;
+  }
+}

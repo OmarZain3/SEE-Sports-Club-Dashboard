@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Kensington Font Family */
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedRegular-BF65d815b73b9b6.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedBold-BF65d815b71c97a.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedItalic-BF65d815b73b3d8.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedBoldItalic-BF65d815b7440e3.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedMedium-BF65d815b746c32.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedMediumItalic-BF65d815b750fed.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedDemi-BF65d815b749bc4.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedDemiItalic-BF65d815b746ce2.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedBlack-BF65d815b68a0b7.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kensington';
+  src: url('/fonts/kensington-font-family-1751956222-0/KensingtonTest-CompressedBlackItalic-BF65d815b71adc9.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+  background-color: #0a0a0a;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

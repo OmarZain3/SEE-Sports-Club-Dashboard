@@ -1,0 +1,236 @@
+.player-card-container {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-card-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 35px #7500FF);
+}
+
+.card-bg-image {
+  height: 300px;
+  min-height: 300px;
+  width: 225px;
+  min-width: 225px;
+  object-fit: contain;
+}
+
+.player-card-content {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-image-section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.player-image-container {
+  height: 70%;
+  position: absolute;
+  left: 10px;
+  bottom: 40px;
+  overflow: hidden;
+}
+
+.player-profile-image {
+  height: 170%;
+  object-fit: cover;
+}
+
+.image-gradient-overlay {
+  width: calc(100% - 20px);
+  height: 20%;
+  background: linear-gradient(to top, black, transparent);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.player-info-section {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 20px;
+  padding-bottom: 12px;
+  z-index: 10;
+}
+
+.player-name-display {
+  text-align: left;
+  text-wrap: wrap;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  max-width: 100%;
+  margin-bottom: 12px;
+  line-height: 100%;
+}
+
+.player-name-display {
+  font-size: 33px;
+}
+
+.player-stats-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  justify-content: flex-start;
+  padding-top: 20px;
+  z-index: 10;
+  padding-right: 12px;
+}
+
+.player-score {
+  text-align: right;
+  font-size: 65px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 100%;
+  border-bottom: 2px solid white;
+  width: fit-content;
+  padding: 0 8px;
+}
+
+.stats-display {
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: left;
+  margin: 12px 0;
+  font-weight: normal;
+  font-family: sans-serif;
+  height: 42px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-label {
+  color: #9C70FA;
+  margin-right: 8px;
+}
+
+.stat-value {
+  color: white;
+}
+
+.sport-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 12px;
+  height: 0;
+}
+
+.sport-icon {
+  border-radius: 50%;
+  background-color: black;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 4px;
+}
+
+.sport-text {
+  font-size: 14px;
+  line-height: 12px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  color: #9C70FA;
+  font-weight: normal;
+  font-family: sans-serif;
+}
+
+
+@media (min-width: 1024px) {
+  .player-card-container {
+    height: 500px;
+  }
+  
+  .card-bg-image {
+    height: 500px;
+    min-height: 500px;
+    width: 375px;
+    min-width: 375px;
+  }
+  
+  .player-image-container {
+    bottom: 70px;
+  }
+  
+  .player-info-section {
+    padding-left: 32px;
+    padding-bottom: 40px;
+  }
+  
+  .player-name-display {
+    font-size: 60px;
+  }
+  
+  .player-stats-section {
+    padding-right: 28px;
+  }
+  
+  .player-score {
+    font-size: 120px;
+  }
+  
+  .stats-display {
+    font-size: 20px;
+    transform: translateX(-10px);
+  }
+  
+  .sport-section {
+    height: 70px;
+  }
+  
+  .sport-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .sport-text {
+    font-size: 18px;
+    line-height: 16px;
+  }
+}
