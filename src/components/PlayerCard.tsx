@@ -19,21 +19,7 @@ type PlayerData = {
 
 const PlayerCard: React.FC = () => (
   <>
-    {/* 1) SVG clipPath definition */}
-    {/* <svg width="0" height="0" style={{ position: "absolute" }}>
-      <defs>
-        <clipPath id="cardWave" clipPathUnits="objectBoundingBox">
-          <path d="
-            M0.05,0.02
-            C0.30,0    0.80,0    0.95,0.12
-            C1,   0.50  1,   0.85  0.62,1
-            C0.30,0.99 0.12,0.50 0.05,0.02
-            Z
-          " />
-        </clipPath>
-      </defs>
-    </svg> */}
-
+    
 <div className="player-card-container">
 
 <svg width="369" height="459" viewBox="0 0 369 459" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
