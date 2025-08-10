@@ -1,30 +1,22 @@
 import React from 'react';
 import './App.css';
-import Sidebar from './components/Sidebar';
-import PerformanceChart from './components/PerformanceChart';
-import VideoAnalysis from './components/VideoAnalysis';
-import PlayerOverview from './components/PlayerOverview';
-import SkillsDevelopmentAnalysis from './components/SkillsDevelopmentAnalysis';
-import PhysicalPerformance from './components/PhysicalPerformance';
-import SkillDevelopment from './components/SkillDevelopment';
-import SkillChart from './components/SkillChart';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import AppLayout from "./layouts/AppLayout";
+import Dashboard from "./components/Dashboard";            // the one you just added
+import PlayerOverview from "./components/PlayerOverview";  // your existing page
 
-function App() {
+export default function App() {
   return (
-    <div className="app">
-      <Sidebar />
-      <main className="main-content">
-        <PlayerOverview />
-        <SkillsDevelopmentAnalysis />
-        <PhysicalPerformance />
-        <SkillDevelopment />
-        <PerformanceChart />
-        <SkillChart />
-        <VideoAnalysis />
-
-      </main>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<Navigate to="./components/dashboard" replace />} />
+          <Route path="./components/dashboard" element={<Dashboard />} />
+          <Route path="./components/players/:id" element={<PlayerOverview />} />
+          {/* add more pages as needed */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;

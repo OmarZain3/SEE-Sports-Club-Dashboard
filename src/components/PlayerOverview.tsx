@@ -13,26 +13,6 @@ const PlayerOverview: React.FC = () => {
   const periods = ['Last Month', '3 Months', '6 Months', 'This Year'];
   const physicalTests = ['Vertical Jump', 'Broad Jump', '10m Run', '5-10-5', 'T-Agility'];
 
-  // Player data for the dynamic card
-  // const playerData = {
-  //   rating: 94,
-  //   name: "Ahmed Mohamed",
-  //   position: "CAM",
-  //   role: "Central Attacking Midfielder",
-  //   imageUrl: "/src/assets/Player_Pic.png",
-  //   stats: { phy: 74, skl: 92 },
-  //   sport: "football",
-  //   profilePicture: "/src/assets/Player_Pic.png",
-  //   totalScore: 94,
-  //   physical: 74,
-  //   skills: 92,
-  //   shortPosition: "CAM",
-  //   traits: [
-  //     'Perfect Link',
-  //     'Great Header',
-  //     'Football Player'
-  //   ],
-  // };
 
   return (
     <div className="player-overview">
@@ -46,16 +26,6 @@ const PlayerOverview: React.FC = () => {
           <span>Team A</span>
           <ChevronRight size={16} />
           <span>Ahmed Mohamed</span>
-        </div>
-        <div className="top-actions">
-          <button className="share-btn">
-            <Share2 size={16} />
-            Share Profile
-          </button>
-          <div className="user-info">
-            <User size={20} />
-            <span>Abdelrahman Ghareeb Administrator</span>
-          </div>
         </div>
       </div>
 
