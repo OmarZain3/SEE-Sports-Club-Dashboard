@@ -14,7 +14,6 @@ type PlayerData = {
   skills?: number | string;
   position?: string;
   shortPosition?: string;
-  // Add any other fields you use
 };
 
 const PlayerCard: React.FC = () => (
