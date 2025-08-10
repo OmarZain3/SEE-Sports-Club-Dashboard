@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AppLayout from "./layouts/AppLayout";
 import Dashboard from "./components/Dashboard";
 import PlayerOverview from "./components/PlayerOverview";
+import TeamsPage from "./components/TeamsPage";
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/players" element={<PlayerOverview />} />
           <Route path="/players/:id" element={<PlayerOverview />} />
-          <Route path="/teams" element={<div>Teams Page - Coming Soon</div>} />
+          <Route path="/teams" element={<TeamsPage />} />
           <Route path="/settings" element={<div>Settings Page - Coming Soon</div>} />
           <Route path="/help" element={<div>Help Page - Coming Soon</div>} />
         </Route>
