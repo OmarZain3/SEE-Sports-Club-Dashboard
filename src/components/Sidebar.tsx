@@ -71,7 +71,6 @@ const Sidebar: React.FC = () => {
             <li>
               <NavLink
                 to="/players"
-                // or to={`/players/${someId}`} if you want a specific player
                 className={({ isActive }) => cx("nav-item", isActive && "active")}
               >
                 <div className="nav-icon">
