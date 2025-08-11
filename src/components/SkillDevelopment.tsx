@@ -38,7 +38,7 @@ const SkillDevelopment: React.FC = () => {
   return (
     <div className="skill-development">
       <div className="section-header">
-        <h2 className="section-title skill-development-title">Skill Development</h2>
+        <h2 className="skill-performance-title">Skill Performance</h2>
         <div className="performance-filter">
           <Filter size={16} />
           <span>Sep 2024 - Aug 2025</span>
