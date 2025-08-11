@@ -255,8 +255,8 @@ const PhysicalPerformance: React.FC = () => {
         {performanceMetrics.map((metric, index) => (
           <div key={index} className="performance-card-teams">
             <div className="performance-card-header-teams">
-              <div className="performance-card-icon">{metric.icon}</div>
-              <div className="performance-card-title">{metric.title}</div>
+              <div className="performance-card-icon">{metric.icon}</div>&nbsp;&nbsp;
+              <div className="performance-card-title">{metric.title}</div> 
             </div>
             <div className="performance-card-value-teams">{metric.value}</div>
           </div>
@@ -288,7 +288,7 @@ const SkillDevelopment: React.FC = () => {
         {SkillMetrics.map((metric, index) => (
           <div key={index} className="skill-development-card-teams">
             <div className="skill-development-card-header-teams">
-              <div className="skill-development-card-icon">{metric.icon}</div>
+              <div className="skill-development-card-icon">{metric.icon}</div> &nbsp;&nbsp;
               <div className="skill-development-card-title">{metric.title}</div>
             </div>
             <div className="skill-development-card-value-teams">{metric.value}</div>
@@ -365,7 +365,7 @@ const SkillDevelopment: React.FC = () => {
   
     return (
       <section className="physchart card">
-        <div className="physchart__head">
+        <div className="physchart__head" style={{marginTop:"2%"}}>
           <div>
             <h2 className="physchart__title">Physical Chart</h2>
             <p className="muted tiny">Track physical performance metrics over time</p>
@@ -543,7 +543,7 @@ const SkillsChartCard: React.FC = () => {
 
   return (
     <section className="skillchart card">
-      <div className="skillchart__head">
+      <div className="skillchart__head" style={{ marginTop:"2%" }}>
         <div>
           <h2 className="skillchart__title">Skills Chart</h2>
           <p className="muted tiny">Monitor skill development and performance trends</p>
@@ -685,7 +685,7 @@ type Note = {
   coach: string;
   category: "Strategy" | "Technique" | "Performance" | "Training";
   color: string;
-  date: string;        // preformatted for now
+  date: string;        
   message: string;
 };
 
@@ -736,7 +736,7 @@ const CoachNotes: React.FC = () => {
         {coachNotes.map((n, i) => (
           <li key={i} className="cnotes__item">
             <div className="cnotes__top">
-              <a className="cnotes__coach" href="#!">{n.coach}</a>
+              <span className="cnotes__coach">{n.coach}</span>
               <time className="cnotes__date">{n.date}</time>
             </div>
 

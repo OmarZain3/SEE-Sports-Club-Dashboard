@@ -6,8 +6,8 @@
     --muted:#9a9aa3;
     --brand:#94C94A; /* your primary */
     --gold:#f4c531;
-    --violet:#7c4dff;
-    --green:#33d17a;
+    --violet:#6728f5;
+    --green:#7BFFBA;
   }
   
   *{ box-sizing:border-box }
@@ -262,31 +262,47 @@
 .spark{ color:#94C94A; }
 
 .physchart__bottom{
-  margin-top:16px; display:grid; grid-template-columns: repeat(3,1fr); gap:16px;
+  margin-top:16px; 
+  display:grid; 
+  grid-template-columns: repeat(3,1fr); 
+  gap:16px;
+  margin-right:26.5% ;
+  margin-bottom: 3%;
 }
 @media (max-width: 780px){
   .physchart__bottom{ grid-template-columns: 1fr; }
 }
 .mcard{
   position:relative;
-  background:#0f0f12; border:1px solid var(--border);
-  border-radius:12px; padding:16px;
+  background:#0f0f12; 
+  border:1px solid var(--border);
+  border-radius:12px; 
+  padding:16px;
+  
 }
 .mcard--purple{
-  background:#1b1430; border-color:#2a1f4a;
+  background:#1b1430; 
+  border-color:#2a1f4a;
 }
 .mcard--amber{
-  background:#2a1f0c; border-color:#3b2b10;
+  background:#2a1f0c; 
+  border-color:#3b2b10;
 }
-.mcard__label{ color:#d0d0d6; margin-bottom:6px; }
-.mcard__value{ font-size:22px; font-weight:800; }
+.mcard__label{ 
+  color:#d0d0d6; 
+  margin-bottom:6px;
+}
+.mcard__value{ 
+  font-size:22px; 
+  font-weight:800;
+}
 
 .dot{
   position:absolute; top:12px; right:12px; width:8px; height:8px; border-radius:50%;
 }
-.dot--green{ background:#33d17a; }
-.dot--violet{ background:#7c4dff; }
-.dot--amber{ background:#f4c531; }
+.dot--green{ background:#7BFFBA; }
+.dot--violet{ background:#6728f5; }
+.dot--amber{ background:#ffa500; }
 
 /* ====== Skills Chart Card (purple theme) ====== */
 .skillchart.card{ 
@@ -374,19 +390,20 @@
   border-radius:12px; 
   padding:14px;
   height: 40%;
+  width: 23%;
 }
 .scard--left{ 
-  border-color:#2a1f4a; 
+  border-color:#7f48ff; 
 }
 .scard__title{ 
   font-weight:700; 
   margin-bottom:12px; 
-  color:#e7dbff;
+  color:#6728f5;
 }
 .scard__value{ 
   font-size:28px; 
   font-weight:800; 
-  color:#7c4dff; 
+  color:#6728f5; 
 }
 
 .donut{
@@ -398,7 +415,7 @@
   border:1px solid #2a1f4a; 
   border-radius:12px; 
   min-height:25%;
-  width: 42%;
+  width: 37%;
 }
 .donut__center{
   position:absolute; 
@@ -407,7 +424,7 @@
 .donut__value{ 
   font-size:48px; 
   font-weight:900; 
-  color:#7c4dff; 
+  color:#6728f5; 
   line-height:1; 
 }
 .donut__sub{ 
@@ -423,8 +440,9 @@
   background:#140f20; 
   border:1px solid #2a1f4a; 
   border-radius:12px; 
-  padding:8px 12px;
-  width: 45%;
+  padding-top: 5%;
+  padding-right: 2%;
+  width: 37%;
 }
 
 .skillchart__bottom{
@@ -432,6 +450,8 @@
   display:grid; 
   grid-template-columns: repeat(4, 1fr); 
   gap:16px;
+  margin-left: 24.5%;
+  margin-bottom: 3%;
 }
 @media (max-width: 980px){
   .skillchart__bottom{ 
@@ -463,11 +483,10 @@
   border:1px solid var(--border);
   border-radius:16px;
   padding:18px 20px;
-  box-shadow: 0 1px 0 #1b1430 inset;    /* subtle purple inner line */
 }
 .cnotes__item::after{
   /* bottom accent line */
-  content:""; position:absolute; left:0; right:0; bottom:0; height:2px;
+  content:""; position:absolute; left:0; right:0; bottom:0; 
   background:#1b1430; border-bottom-left-radius:16px; border-bottom-right-radius:16px;
 }
 
@@ -477,7 +496,7 @@
 .cnotes__coach{
   color:#7c4dff; font-weight:800; text-decoration:none;
 }
-.cnotes__coach:hover{ text-decoration:underline; }
+/* .cnotes__coach:hover{ text-decoration:underline; } */
 .cnotes__date{ color:#b4b4bc; font-size:12px; }
 
 .cnotes__catrow{

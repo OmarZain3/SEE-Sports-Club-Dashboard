@@ -1530,7 +1530,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .performance-card-teams:hover {
@@ -1545,20 +1545,18 @@ body {
   background-color: #1b1b1b;
   padding: 12px 16px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
 .performance-card-value-teams {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 700;
   color: #fff;
   line-height: 1;
+  margin-left:10% ;
  }
-
-
-
 
 .performance-card-header {
   background-color: #1b1b1b;
@@ -1634,7 +1632,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .skill-development-card-teams:hover {
@@ -1649,16 +1647,17 @@ body {
   background-color: #1b1b1b;
   padding: 12px 16px;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  /* justify-content: space-between; */
+  flex-direction: row;
   align-items: center;
 }
 
 .skill-development-card-value-teams {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 700;
   color: #fff;
   line-height: 1;
+  margin-left: 10%;
 }
 
 
