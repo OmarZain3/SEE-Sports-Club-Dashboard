@@ -38,7 +38,7 @@ const PhysicalPerformance: React.FC = () => {
   return (
     <div className="physical-performance">
       <div className="section-header">
-        <h2 className="section-title physical-performance-title">Physical Performance</h2>
+        <h2 className="physical-performance-title">Physical Performance</h2>
         <div className="performance-filter">
           <Filter size={16} />
           <span>Sep 2024 - Aug 2025</span>

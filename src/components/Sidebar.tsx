@@ -1,120 +1,164 @@
-import React from 'react';
-import { 
-  LogOut, 
-  User, 
-  Trophy, 
-  LayoutDashboard, 
-  Users, 
+import React, { useRef, useState } from "react";
+import {
+  LogOut,
+  User,
+  Trophy,
+  LayoutDashboard,
+  Users,
   User as UserIcon,
-  Settings, 
+  Settings,
   HelpCircle,
-  ChevronLeft
-} from 'lucide-react';
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { NavLink } from "react-router-dom";
+
+const cx = (...c: (string | false)[]) => c.filter(Boolean).join(" ");
 
 const Sidebar: React.FC = () => {
+  const [collapsed, setCollapsed] = useState(false);
+  const [expanding, setExpanding] = useState(false); // temp class for fade-in
+  const t = useRef<number | null>(null);
+
+  const toggle = () => {
+    if (collapsed) {
+      // collapsed -> open: add brief expanding state for smooth fade
+      setExpanding(true);
+      setCollapsed(false);
+      if (t.current) window.clearTimeout(t.current);
+      t.current = window.setTimeout(() => setExpanding(false), 320);
+    } else {
+      // open -> collapsed
+      setCollapsed(true);
+      if (t.current) window.clearTimeout(t.current);
+      setExpanding(false);
+    }
+  };
+
   return (
-    <div className="sidebar">
-      {/* Logo & Heading */}
-      <div className="logo">
-        <div className="logo-icon">
-          <Trophy size={24} />
+    <aside
+      className={cx(
+        "sidebar shell",
+        collapsed && "is-collapsed",
+        expanding && "is-expanding"
+      )}
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      {/* Collapse FAB — sits on the right edge */}
+      <button
+        className="collapse-fab"
+        aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+        aria-expanded={!collapsed}
+        onClick={toggle}
+      >
+        {collapsed ? (
+          <ChevronRight className="chev" size={14} />
+        ) : (
+          <ChevronLeft className="chev" size={14} />
+        )}
+      </button>
+
+      {/* Brand */}
+      <div className="brand">
+        <div className="brand-row">
+          <div className="brand-icon">
+            <Trophy size={16} />
+          </div>
+          <div className="brand-texts">
+            <h2 className="brand-title">Sports Club</h2>
+            <p className="brand-sub">Management System</p>
+          </div>
         </div>
-        <div className="logo-text">
-          <div className="club-name">Sports Club</div>
-          <div className="info-logo">Management System</div>
-        </div>
-        <button className="collapse-btn">
-          <ChevronLeft size={16} />
-        </button>
       </div>
-      
-      {/* Navigation Menu */}
-      <nav className="nav-menu">
-        {/* MAIN Section */}
-        <div className="nav-section">
-          <h3 className="nav-section-title">MAIN</h3>
-          <ul className="nav-list">
-            <li className="nav-item">
-              <div className="nav-icon">
-                <LayoutDashboard size={20} />
-              </div>
-              <div className="nav-content">
-                <div className="nav-title">Dashboard</div>
-                <div className="nav-subtitle">Overview and key metrics</div>
-              </div>
-            </li>
-            
-            <li className="nav-item">
-              <div className="nav-icon">
-                <Users size={20} />
-              </div>
-              <div className="nav-content">
-                <div className="nav-title">Teams</div>
-                <div className="nav-subtitle">Manage team rosters</div>
-              </div>
-              <div className="notification-badge">3</div>
-            </li>
-            
-            <li className="nav-item active">
-              <div className="nav-icon">
-                <UserIcon size={20} />
-              </div>
-              <div className="nav-content">
-                <div className="nav-title">Players</div>
-                <div className="nav-subtitle">Player profiles and stats</div>
-              </div>
-              <div className="notification-badge">67</div>
-            </li>
-          </ul>
+
+      {/* Nav */}
+      <nav className="nav-area">
+        <div className="group">
+          <div className="group-label">Main</div>
+
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) => cx("row", isActive && "row--active")}
+          >
+            <LayoutDashboard className="row-ico" size={18} />
+            <div className="row-text">
+              <div className="row-title">Dashboard</div>
+              <div className="row-sub">Overview and key metrics</div>
+            </div>
+          </NavLink>
+
+          <NavLink
+            to="/teams"
+            className={({ isActive }) => cx("row", isActive && "row--active")}
+          >
+            <Users className="row-ico" size={18} />
+            <div className="row-text">
+              <div className="row-title">Teams</div>
+              <div className="row-sub">Manage team rosters</div>
+            </div>
+            <span className="pill pill--primary">3</span>
+          </NavLink>
+
+          <NavLink
+            to="/players"
+            className={({ isActive }) => cx("row", isActive && "row--active")}
+          >
+            <UserIcon className="row-ico" size={18} />
+            <div className="row-text">
+              <div className="row-title">Players</div>
+              <div className="row-sub">Player profiles and stats</div>
+            </div>
+            <span className="pill pill--active">67</span>
+          </NavLink>
         </div>
-        
-        {/* SYSTEM Section */}
-        <div className="nav-section">
-          <h3 className="nav-section-title">SYSTEM</h3>
-          <ul className="nav-list">
-            <li className="nav-item">
-              <div className="nav-icon">
-                <Settings size={20} />
-              </div>
-              <div className="nav-content">
-                <div className="nav-title">Settings</div>
-                <div className="nav-subtitle">App preferences</div>
-              </div>
-            </li>
-            
-            <li className="nav-item">
-              <div className="nav-icon">
-                <HelpCircle size={20} />
-              </div>
-              <div className="nav-content">
-                <div className="nav-title">Help & Support</div>
-                <div className="nav-subtitle">Get assistance</div>
-              </div>
-            </li>
-          </ul>
+
+        <div className="group pad-top">
+          <div className="group-label">System</div>
+
+          <NavLink
+            to="/settings"
+            className={({ isActive }) => cx("row", isActive && "row--active")}
+          >
+            <Settings className="row-ico" size={18} />
+            <div className="row-text">
+              <div className="row-title">Settings</div>
+              <div className="row-sub">App preferences</div>
+            </div>
+          </NavLink>
+
+          <NavLink
+            to="/help"
+            className={({ isActive }) => cx("row", isActive && "row--active")}
+          >
+            <HelpCircle className="row-ico" size={18} />
+            <div className="row-text">
+              <div className="row-title">Help &amp; Support</div>
+              <div className="row-sub">Get assistance</div>
+            </div>
+          </NavLink>
         </div>
       </nav>
-      
-      {/* User Profile */}
-      <div className="user-profile">
-      <div className="user-profile-card">
-        <div className="user-avatar">
-          <User size={16} />
+
+      {/* User + Logout */}
+      <div className="user-block">
+        <div className="user-card">
+          <div className="user-avatar-2">
+            <User size={16} />
+          </div>
+          <div className="user-meta-2">
+            <div className="user-name-2">Coach Admin</div>
+            <div className="user-mail-2">admin@sportsclub.com</div>
+          </div>
         </div>
-        <div className="user-info" style={{justifyContent: 'left'}}>
-          <div className="user-name" style={{justifyContent: 'left'}}>Coach Admin</div>
-          <div className="user-email">admin@sportsclub.com</div>
-        </div>
+
+        <button className="logout-row" aria-label="Log out">
+          <LogOut className="row-ico" size={18} />
+          <span className="logout-text">Log Out</span>
+        </button>
       </div>
-        <div className="logout-section">
-          <button className="logout-btn">
-            <LogOut size={16} />
-            <span>Log Out</span>
-          </button>
-        </div>
-      </div>
-    </div>
+    </aside>
   );
 };
 
-export default Sidebar; 
+export default Sidebar;
